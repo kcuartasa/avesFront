@@ -1,0 +1,39 @@
+  <div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <input type="text" class="form-control" name="filtroConsulta" placeholder="Buscar..." [(ngModel)]="filtroConsulta">
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h3>Aves</h3>
+    </div>
+    <div class="card-body">
+      <table class="table table-hover">
+        <thead>
+          <tr class="text-center">
+            <th>ID</th>
+            <th>Nombre Común</th>
+            <th>Nombre Cientifico</th>
+            <!-- <th>Pais</th> -->
+            <th>Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="text-center" *ngFor="let ave of aves | filtro: filtroConsulta">
+            <td>{{ave.cdAve}}</td>
+            <td>{{ave.dsNombreComun}}</td>
+            <td>{{ave.dsNombreCientifico}}</td>
+            <!-- <td>{{ave.paises}}</td> -->
+            <td>
+              <button class="btn btn-warning" [routerLink]="['../editar',ave.cdAve]">Editar</button>
+              <button class="btn btn-danger" (click)="eliminarAve(ave.cdAve)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

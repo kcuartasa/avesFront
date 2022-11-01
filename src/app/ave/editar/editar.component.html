@@ -1,0 +1,36 @@
+<h1 class="titulo">Información de aves</h1>
+
+<div class="form-group">
+  <form (ngSubmit)="enviarFormulario()" [formGroup]="form">
+    <div class="mb-4">
+      <label for="cdAve" class="form-label"> ID </label>
+      <input type="text" class="form-control" id="cdAve" name="cdAve" value="{{id}}" formControlName="cdAve">
+    </div>
+
+    <div class="mb-4">
+      <label for="dsNombreComun" class="form-label"> Nombre común </label>
+      <input type="text" class="form-control" id="dsNombreComun" name="dsNombreComun" formControlName="dsNombreComun">
+    </div>
+
+    <div class="mb-4">
+      <label for="dsNombreCientifico" class="form-label"> Nombre cientifico </label>
+      <input type="text" class="form-control" id="dsNombreCientifico" name="dsNombreCientifico" formControlName="dsNombreCientifico">
+    </div>
+
+    <div class="mb-4">
+      <label for="paises" class="form-label"> Pais </label>
+      <select name="" id="paises" class="form-control" name="paises">
+        <option selected>Seleccione un pais</option>
+        <option value="Mexico">Mexico</option>
+        <option value="Costa Rica">Costa Rica</option>
+        <option value="Colombia">Colombia</option>
+        <option value="Argentina">Argentina</option>
+      </select>
+    </div>
+
+    <div>
+      <button type="submit" class="btn btn-info">Guardar</button>
+    </div>
+  </form>
+</div>
+
